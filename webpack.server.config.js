@@ -2,11 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const BUILD_DIR         = path.resolve(__dirname, './');
+
 module.exports = {
 
   entry: path.resolve(__dirname, 'server.js'),
 
   output: {
+    path: BUILD_DIR,
     filename: 'server.bundle.js'
   },
 
@@ -38,7 +41,7 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
-      },
+      }
     ]
   }
 

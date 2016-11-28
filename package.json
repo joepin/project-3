@@ -7,9 +7,9 @@
     "clean": "rm -rf dist && rm -rf node_modules",
     "heroku-prebuild": "scripts/deployment_react.sh",
     "heroku-postbuild": "scripts/deployment_cleanup.sh",
-    "start": "npm run build && node server.bundle.js",
+    "start": "npm run build && node server.bundle.js && rm -rf css/",
     "watch": "npm run build && node server.bundle.js",
-    "build:client": "webpack -d --watch --progress --config webpack.config.js",
+    "build:client": "webpack -d --progress --config webpack.config.js",
     "build:server": "webpack -d --progress --config webpack.server.config.js",
     "build": "npm run build:server && npm run build:client"
   },

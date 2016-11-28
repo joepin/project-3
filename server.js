@@ -16,7 +16,6 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/api/v1', require('./routes/api.js'));
 
-
 // import some new stuff
 const React = require('react');
 // we'll use this to render our app to an html string
